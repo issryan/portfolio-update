@@ -1,16 +1,15 @@
-// src/pages/Projects.jsx
 import React from 'react';
-import './Projects.css'; // Import the CSS file for styling
-import useScrollAnimation from '../hooks/useScrollAnimation'; // Import the custom hook
+import './Projects.css'; 
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Projects = () => {
   const [projectsRef, isProjectsVisible] = useScrollAnimation();
 
   const projectList = [
-    { id: 1, title: 'Project 1', description: 'Description for project 1', imageUrl: 'path/to/project1.png' },
-    { id: 2, title: 'Project 2', description: 'Description for project 2', imageUrl: 'path/to/project2.png' },
-    { id: 3, title: 'Project 3', description: 'Description for project 3', imageUrl: 'path/to/project3.png' },
-    { id: 4, title: 'Project 4', description: 'Description for project 4', imageUrl: 'path/to/project4.png' },
+    { id: 1, title: 'Shift Happens', description: 'Description for project 1', imageUrl: 'https://via.placeholder.com/300' },
+    { id: 2, title: 'Flick', description: 'Description for project 2', imageUrl: 'https://via.placeholder.com/300' },
+    { id: 3, title: 'Breed Finder', description: 'Description for project 3', imageUrl: 'https://via.placeholder.com/300' },
+    { id: 4, title: 'Alphard Survey', description: 'Description for project 4', imageUrl: 'https://via.placeholder.com/300' },
   ];
 
   return (
