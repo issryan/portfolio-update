@@ -1,37 +1,96 @@
-.about-container,
-.contact-container {
+/* About Page Styles */
+.about-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  gap: 20px;
   padding: 20px;
+  background-color: #1c1c1e;
   color: white;
 }
 
-form {
+/* Sidebar Styles */
+.sidebar {
+  width: 30%;
+  background-color: #2c2c2e;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-box img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.info-content {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.name {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 1.2em;
+  color: #ffa500;
+}
+
+/* Main Content Styles */
+.about-main {
+  width: 70%;
+  background-color: #2c2c2e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.article-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffa500;
+  padding-bottom: 10px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+.service {
+  margin-top: 20px;
+}
+
+.service-title {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.service-list {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 300px;
+  gap: 20px;
 }
 
-input, textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.service-item {
+  background-color: #3a3a3c;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.service-icon-box img {
+  width: 50px;
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.service-item-title {
+  font-size: 1.2em;
+  color: #ffa500;
+  margin-bottom: 5px;
+}
+
+.service-item-text {
+  color: #bbb;
 }

@@ -1,3 +1,14 @@
+/* Ensure the entire page supports scrolling */
+html, body, #root {
+  height: 100%;
+  overflow: auto;
+  margin: 0;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 .App {
   text-align: center;
 }
