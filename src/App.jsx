@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+// src/App.jsx
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import About from './pages/About';
@@ -8,12 +9,6 @@ import Contact from './pages/Contact';
 import './App.css'; // Global CSS
 
 function App() {
-  const aboutRef = useRef(null);
-
-  const scrollToAbout = () => {
-    aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <Router>
       <div className="App">

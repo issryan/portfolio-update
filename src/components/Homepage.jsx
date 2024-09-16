@@ -1,9 +1,10 @@
+// src/components/Homepage.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import AppIcon from './AppIcon';
-import About from '../pages/About'; 
-import Gallery from '../pages/Gallery'; 
-import Projects from '../pages/Projects'; 
+import About from '../pages/About';
+import Gallery from '../pages/Gallery';
+import Projects from '../pages/Projects';
 import './Homepage.css';
 
 const apps = [
@@ -16,10 +17,10 @@ const apps = [
 ];
 
 const Homepage = () => {
-  const [selectedApp, setSelectedApp] = useState(apps[0]);
+  const [selectedApp, setSelectedApp] = useState(apps[0]); 
 
-  const expandContent = () => {
-    document.getElementById('app-content').scrollIntoView({ behavior: 'smooth' });
+  const handleAppSwitch = (app) => {
+    setSelectedApp(app); 
   };
 
   return (
@@ -30,27 +31,20 @@ const Homepage = () => {
         <div>Toolbar Content (TBD)</div>
       </div>
 
-      {/* Background overlay */}
-      <div className="homepage-overlay"></div>
-
       {/* Top Section: App Menu */}
       <motion.div className="app-bar" whileHover={{ scale: 1.05 }}>
         {apps.map((app) => (
-          <AppIcon 
-            key={app.id} 
-            name={app.name} 
-            icon={app.icon} 
-            onHover={() => setSelectedApp(app)} 
+          <AppIcon
+            key={app.id}
+            name={app.name}
+            icon={app.icon}
+            onHover={() => handleAppSwitch(app)} 
           />
         ))}
       </motion.div>
 
-      {/* Bottom Section: Dynamic Content */}
-      <div 
-        id="app-content" 
-        className="app-content"
-        onWheel={expandContent} // Trigger expansion on scroll
-      >
+      {/* Bottom Section: Display Selected App */}
+      <div className="app-content">
         {selectedApp.component}
       </div>
     </div>

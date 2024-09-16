@@ -1,70 +1,58 @@
+// src/pages/About.jsx
 import React from 'react';
-import './About.css'; // Importing the updated CSS file
+import './About.css'; // Import the updated CSS file
+import useScrollAnimation from '../hooks/useScrollAnimation'; // Import the custom hook
 
 const About = () => {
+  const [aboutRef, isAboutVisible] = useScrollAnimation();
+
   return (
-    <section className="about-section">
+    <section
+      ref={aboutRef}
+      className={`about-section ${isAboutVisible ? 'fade-in' : 'preview'}`}
+    >
       <aside className="sidebar">
-        <div class="sidebar-info">
-          <figure class="avatar-box">
-
+        <div className="sidebar-info">
+          <figure className="avatar-box">
+            {/* Add your avatar image here */}
           </figure>
-          <div class="info-content">
-            <h1 class="name" title="Ryan Arafeh">Ryan Arafeh</h1>
-
-            <p class="title">Software Engineer / UI/UX Developer</p>
+          <div className="info-content">
+            <h1 className="name" title="Your Name">Ryan Arafeh</h1>
+            <p className="title">Software Engineer</p>
           </div>
-
         </div>
 
-        <div class="sidebar-info_more">
-
-          <div class="separator"></div>
-
-          <ul class="contacts-list">
-
-            <li class="contact-item">
-
-              <div class="icon-box">
+        <div className="sidebar-info_more">
+          <div className="separator"></div>
+          <ul className="contacts-list">
+            <li className="contact-item">
+              <div className="icon-box">
                 <ion-icon name="mail-outline"></ion-icon>
               </div>
-
-              <div class="contact-info">
-                <p class="contact-title">Email</p>
-
-                <a href="mailto:arafehryan@gmail.com" class="contact-link">arafehryan@gmail.com</a>
+              <div className="contact-info">
+                <p className="contact-title">Email</p>
+                <a href="mailto:arafehryan@gmail.com" className="contact-link">arafehryan@gmail.com</a>
               </div>
-
             </li>
-
-            <li class="contact-item">
-
-              <div class="icon-box">
+            <li className="contact-item">
+              <div className="icon-box">
                 <ion-icon name="location-outline"></ion-icon>
               </div>
-
-              <div class="contact-info">
-                <p class="contact-title">Location</p>
-
+              <div className="contact-info">
+                <p className="contact-title">Location</p>
                 <address>Toronto, Ontario, Canada</address>
               </div>
-
             </li>
-
           </ul>
-
-          <div class="separator"></div>
-
-          <ul class="social-list">
-
-            <li class="social-item">
-              <a href="#" class="social-link">
+          <div className="separator"></div>
+          <ul className="social-list">
+            <li className="social-item">
+              <a href="https://www.linkedin.com/in/ryanarafeh/" className="social-link">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
-
-            <li class="social-item">
-              <a href="#" class="social-link">
+            <li className="social-item">
+              <a href="https://github.com/issryan" className="social-link">
                 <ion-icon name="logo-github"></ion-icon>
               </a>
             </li>
