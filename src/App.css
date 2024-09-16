@@ -4,6 +4,17 @@ html, body, #root {
   margin: 0;
   scroll-behavior: smooth;
 }
+body {
+  background-image: url('./assets/ps5-background.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  background-position: center;
+  color: white; /* Optional: Set default text color to white for better visibility */
+  margin: 0;
+  padding: 0;
+  font-family: 'YourChosenFont', sans-serif; /* Optional: Set a default font */
+}
 
 .App {
   text-align: center;

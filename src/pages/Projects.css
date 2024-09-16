@@ -1,13 +1,14 @@
 /* Projects Page Styles */
 .projects-page {
   padding: 20px;
-  background-color: #1c1c1e;
+  background: rgba(0, 0, 0, 0.3); /* Transparent background */
+  -webkit-backdrop-filter: blur(15px); /* Blur effect */
+  backdrop-filter: blur(15px);
+  border-radius: 3rem;
   color: white;
-  opacity: 0.5;
-  transform: translateY(20px);
+  opacity: 0.8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  overflow: visible;
-  pointer-events: none;
 }
 
 .fade-in {

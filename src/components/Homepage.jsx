@@ -6,10 +6,12 @@ import About from '../pages/About';
 import Gallery from '../pages/Gallery';
 import Projects from '../pages/Projects';
 import './Homepage.css';
+import galleryIcon from '../assets/galleryIcon.png'; 
+
 
 const apps = [
   { id: 1, name: 'About', icon: 'path/to/about-icon.png', component: <About /> },
-  { id: 2, name: 'Gallery', icon: 'path/to/gallery-icon.png', component: <Gallery /> },
+  { id: 2, name: 'Gallery', icon: {galleryIcon}, component: <Gallery /> },
   { id: 3, name: 'Projects', icon: 'path/to/projects-icon.png', component: <Projects /> },
   { id: 4, name: 'Contact', icon: 'path/to/contact-icon.png', component: <div>Contact Component</div> },
   { id: 5, name: 'Resume', icon: 'path/to/resume-icon.png', component: <div>Resume Component</div> },
