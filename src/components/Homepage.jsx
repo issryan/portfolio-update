@@ -15,7 +15,6 @@ const apps = [
   { id: 3, name: 'Projects', icon: 'path/to/projects-icon.png', component: <Projects /> },
   { id: 4, name: 'Contact', icon: 'path/to/contact-icon.png', component: <div>Contact Component</div> },
   { id: 5, name: 'Resume', icon: 'path/to/resume-icon.png', component: <div>Resume Component</div> },
-  { id: 6, name: 'LinkedIn', icon: 'path/to/linkedin-icon.png', component: <div>LinkedIn Component</div> },
 ];
 
 const Homepage = () => {

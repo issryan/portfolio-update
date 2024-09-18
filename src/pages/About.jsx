@@ -2,6 +2,8 @@ import React from 'react';
 import './About.css'; 
 import useScrollAnimation from '../hooks/useScrollAnimation'; 
 import checkmark from '../assets/checkmark.png'; 
+import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Import GitHub and LinkedIn icons
+import { MdEmail, MdLocationOn, MdSchool } from 'react-icons/md'; // Import other icons
 
 const About = () => {
   const [aboutRef, isAboutVisible] = useScrollAnimation();
@@ -27,7 +29,7 @@ const About = () => {
           <ul className="contacts-list">
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
+                <MdEmail size={20} /> {/* Email icon */}
               </div>
               <div className="contact-info">
                 <p className="contact-title">Email</p>
@@ -36,24 +38,35 @@ const About = () => {
             </li>
             <li className="contact-item">
               <div className="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
+                <MdLocationOn size={20} /> {/* Location icon */}
               </div>
               <div className="contact-info">
                 <p className="contact-title">Location</p>
                 <address>Toronto, Ontario, Canada</address>
               </div>
             </li>
+            <li className="contact-item">
+              <div className="icon-box">
+                <MdSchool size={20} /> {/* Education icon */}
+              </div>
+              <div className="contact-info">
+                <p className="contact-title">Education</p>
+                <address>Software Engineering Technology</address>
+                <address>@Centennial College</address>
+              </div>
+            </li>
           </ul>
+
           <div className="separator"></div>
           <ul className="social-list">
             <li className="social-item">
               <a href="https://www.linkedin.com/in/ryanarafeh/" className="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
+                <FaLinkedin size={20} /> {/* LinkedIn icon */}
               </a>
             </li>
             <li className="social-item">
               <a href="https://github.com/issryan" className="social-link">
-                <ion-icon name="logo-github"></ion-icon>
+                <FaGithub size={20} /> {/* GitHub icon */}
               </a>
             </li>
           </ul>
@@ -66,41 +79,8 @@ const About = () => {
         </header>
         <section className="about-text">
           <p>
-            I'm a Software Engineering student navigating the coding maze...
+            I'm a Software Engineering student navigating the coding maze. Currently knee-deep in algorithms and projects, I'm on a mission to make tech as cool as it can get. When I'm not wrestling with code, you'll catch me snapping pics of my daily adventures. From the hustle of the city to the chill vibes of nature, my camera's always ready. Right now, I'm gearing up to dive into the world of either data analysis or web development. Currently on the lookout for an internship, so if you've got exciting projects and a spot on your team, I'm all ears. Let's connect and explore the exciting intersections of code and creativity!
           </p>
-        </section>
-
-        <section className="service">
-          <h3 className="service-title">Hobbies</h3>
-          <ul className="service-list">
-            <li className="service-item">
-              <div className="service-icon-box">
-                <img src="path/to/icon-design.svg" alt="design icon" />
-              </div>
-              <div className="service-content-box">
-                <h4 className="service-item-title">Photography</h4>
-                <p className="service-item-text">Small paragraph here.</p>
-              </div>
-            </li>
-            <li className="service-item">
-              <div className="service-icon-box">
-                <img src="path/to/icon-design.svg" alt="design icon" />
-              </div>
-              <div className="service-content-box">
-                <h4 className="service-item-title">Graphic Design</h4>
-                <p className="service-item-text">Small paragraph here.</p>
-              </div>
-            </li>
-            <li className="service-item">
-              <div className="service-icon-box">
-                <img src="path/to/icon-design.svg" alt="design icon" />
-              </div>
-              <div className="service-content-box">
-                <h4 className="service-item-title">Biking</h4>
-                <p className="service-item-text">Small paragraph here.</p>
-              </div>
-            </li>
-          </ul>
         </section>
 
         <section className="service">
@@ -194,6 +174,39 @@ const About = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="service">
+          <h3 className="service-title">Hobbies</h3>
+          <ul className="service-list">
+            <li className="service-item">
+              <div className="service-icon-box">
+                <img src="path/to/icon-design.svg" alt="design icon" />
+              </div>
+              <div className="service-content-box">
+                <h4 className="service-item-title">Photography</h4>
+                <p className="service-item-text">Small paragraph here.</p>
+              </div>
+            </li>
+            <li className="service-item">
+              <div className="service-icon-box">
+                <img src="path/to/icon-design.svg" alt="design icon" />
+              </div>
+              <div className="service-content-box">
+                <h4 className="service-item-title">Graphic Design</h4>
+                <p className="service-item-text">Small paragraph here.</p>
+              </div>
+            </li>
+            <li className="service-item">
+              <div className="service-icon-box">
+                <img src="path/to/icon-design.svg" alt="design icon" />
+              </div>
+              <div className="service-content-box">
+                <h4 className="service-item-title">Biking</h4>
+                <p className="service-item-text">Small paragraph here.</p>
+              </div>
+            </li>
+          </ul>
         </section>
       </article>
     </section>
