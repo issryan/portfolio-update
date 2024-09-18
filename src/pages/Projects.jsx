@@ -9,7 +9,6 @@ const Projects = () => {
     { id: 1, title: 'Shift Happens', description: 'Description for project 1',link: '/project1', imageUrl: 'https://via.placeholder.com/300' },
     { id: 2, title: 'Flick', description: 'Description for project 2', link: '/project2',imageUrl: 'https://via.placeholder.com/300' },
     { id: 3, title: 'Breed Finder', description: 'Description for project 3', link: '/project3',imageUrl: 'https://via.placeholder.com/300' },
-    { id: 4, title: 'Alphard Survey', description: 'Description for project 4', link: '/project4', imageUrl: 'https://via.placeholder.com/300' },
   ];
 
   return (
