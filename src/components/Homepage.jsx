@@ -1,4 +1,3 @@
-// src/components/Homepage.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import AppIcon from './AppIcon';
@@ -6,30 +5,33 @@ import About from '../pages/About';
 import Gallery from '../pages/Gallery';
 import Projects from '../pages/Projects';
 import './Homepage.css';
-import galleryIcon from '../assets/galleryIcon.png'; 
-
+import galleryIcon from '../assets/galleryIcon.png';
 
 const apps = [
   { id: 1, name: 'About', icon: 'path/to/about-icon.png', component: <About /> },
-  { id: 2, name: 'Gallery', icon: {galleryIcon}, component: <Gallery /> },
+  { id: 2, name: 'Gallery', icon: galleryIcon, component: <Gallery /> },
   { id: 3, name: 'Projects', icon: 'path/to/projects-icon.png', component: <Projects /> },
   { id: 4, name: 'Contact', icon: 'path/to/contact-icon.png', component: <div>Contact Component</div> },
   { id: 5, name: 'Resume', icon: 'path/to/resume-icon.png', component: <div>Resume Component</div> },
 ];
 
 const Homepage = () => {
-  const [selectedApp, setSelectedApp] = useState(apps[0]); 
+  const [selectedApp, setSelectedApp] = useState(apps[0]);
 
   const handleAppSwitch = (app) => {
-    setSelectedApp(app); 
+    setSelectedApp(app);
   };
 
   return (
     <div className="homepage-container">
       {/* Toolbar */}
       <div className="toolbar">
-        <div>Logo</div>
-        <div>Toolbar Content (TBD)</div>
+        <div className="logo">Logo</div>
+        <div className="toolbar-icons">
+          <div className="toolbar-icon settings-icon"></div>
+          <div className="toolbar-icon notifications-icon"></div>
+          <div className="toolbar-icon user-icon"></div>
+        </div>
       </div>
 
       {/* Top Section: App Menu */}
@@ -39,7 +41,7 @@ const Homepage = () => {
             key={app.id}
             name={app.name}
             icon={app.icon}
-            onHover={() => handleAppSwitch(app)} 
+            onHover={() => handleAppSwitch(app)}
           />
         ))}
       </motion.div>
