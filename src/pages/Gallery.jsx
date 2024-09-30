@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
-const placeholderImages = [
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300',
-  'https://via.placeholder.com/300'
-];
+const totalImages = 48;
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -25,17 +14,22 @@ const Gallery = () => {
     setSelectedImage(null);
   };
 
+  const images = [];
+  for (let i = 1; i <= totalImages; i++) {
+    images.push(`/gallery/photo${i}.JPG`); 
+  }
+
   return (
     <div className="gallery-container">
       <h2 className="gallery-title">Media Gallery</h2>
       <div className="gallery-grid">
-        {placeholderImages.map((image, index) => (
+        {images.map((image, index) => (
           <div 
             className="gallery-item" 
             key={index}
             onClick={() => handleImageClick(image)}
           >
-            <img src={image} alt={`Placeholder ${index}`} className="gallery-image" />
+            <img src={image} alt={`Gallery image ${index + 1}`} className="gallery-image" />
           </div>
         ))}
       </div>
