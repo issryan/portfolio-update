@@ -6,11 +6,13 @@ import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Particles from './components/ParticleEffect'
 import './App.css';
 
 const App = () => {
   return (
     <Router>
+      <Particles />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/projects" element={<Projects />} />

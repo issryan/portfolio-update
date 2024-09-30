@@ -1,34 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
 
 const useScrollAnimation = () => {
-  const elementRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            // If the element is not intersecting (scrolled up), reset to preview state
-            setIsVisible(false);
-          }
-        });
-      },
-      { threshold: 0.3 } // Trigger when 30% of the element is in view
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    });
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    // Save the current ref value into a variable
+    const currentRef = elementRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the saved ref value
       }
     };
-  }, []);
+  }, [elementRef]);
 
   return [elementRef, isVisible];
 };
