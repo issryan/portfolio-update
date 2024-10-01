@@ -1,14 +1,10 @@
-/* Basic Gallery Layout */
 .gallery-container {
   padding: 20px;
-  color: white;
-  backdrop-filter: blur(5px); 
-
 }
 
 .gallery-title {
   text-align: center;
-  font-size: 2em;
+  color: white;
   margin-bottom: 20px;
 }
 
@@ -33,7 +29,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 /* Fullscreen overlay */
@@ -41,17 +38,18 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .fullscreen-image {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
 }

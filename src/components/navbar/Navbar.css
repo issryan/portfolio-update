@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center; 
     gap: 25px;
+    padding-top: 50px;
   }
   
   .app-bar::-webkit-scrollbar {

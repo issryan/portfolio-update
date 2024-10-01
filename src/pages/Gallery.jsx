@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Gallery.css';
 
 const totalImages = 48;
@@ -14,9 +14,21 @@ const Gallery = () => {
     setSelectedImage(null);
   };
 
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'; 
+    };
+  }, [selectedImage]);
+
   const images = [];
   for (let i = 1; i <= totalImages; i++) {
-    images.push(`/gallery/photo${i}.JPG`); 
+    images.push(`/gallery/photo${i}.JPG`);
   }
 
   return (
@@ -24,8 +36,8 @@ const Gallery = () => {
       <h2 className="gallery-title">Media Gallery</h2>
       <div className="gallery-grid">
         {images.map((image, index) => (
-          <div 
-            className="gallery-item" 
+          <div
+            className="gallery-item"
             key={index}
             onClick={() => handleImageClick(image)}
           >
