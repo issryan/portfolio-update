@@ -1,35 +1,41 @@
 import React from 'react';
-import './Projects.css';
+import './Projects.css'; 
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Projects = () => {
   const [projectsRef, isProjectsVisible] = useScrollAnimation();
 
   const projectList = [
-    {
-      id: 1,
-      title: 'Shift Happens',
-      description: 'A shift scheduling app with smart auto-scheduling features.',
-      liveLink: 'https://example.com/shift-happens',
-      repoLink: 'https://github.com/issryan/ShiftHappens',
-      imageUrl: 'https://via.placeholder.com/300'
+    { 
+      id: 1, 
+      title: 'Shift Happens', 
+      description: 'A shift scheduling web app with conflict detection and employee availability features.', 
+      link: '/project1', 
+      liveLink: 'https://live-link.com', 
+      githubLink: 'https://github.com/repo1',
+      imageUrl: 'https://via.placeholder.com/300',
+      tags: ['React', 'Node.js', 'MongoDB']
     },
-    {
-      id: 2,
-      title: 'Flick',
-      description: 'A social media app built for sharing short videos and images.',
-      liveLink: 'https://projectflick.netlify.app',
-      repoLink: 'https://github.com/project-flick/Flick',
-      imageUrl: 'https://via.placeholder.com/300'
+    { 
+      id: 2, 
+      title: 'Flick', 
+      description: 'A social media app for sharing favorite flicks with friends.', 
+      link: '/project2',
+      liveLink: 'https://live-link.com', 
+      githubLink: 'https://github.com/repo2',
+      imageUrl: 'https://via.placeholder.com/300',
+      tags: ['React', 'MongoDB', 'CSS']
     },
-    {
-      id: 3,
-      title: 'Breed Finder',
-      description: 'An AI-powered app to identify dog breeds from pictures.',
-      liveLink: 'https://example.com/breed-finder',
-      repoLink: 'https://github.com/issryan/BreedFinder',
-      imageUrl: 'https://via.placeholder.com/300'
-    },
+    { 
+      id: 3, 
+      title: 'Breed Finder', 
+      description: 'An AI-powered app to identify dog breeds using machine learning.', 
+      link: '/project3',
+      liveLink: 'https://live-link.com', 
+      githubLink: 'https://github.com/repo3',
+      imageUrl: 'https://via.placeholder.com/300',
+      tags: ['Python', 'Flask', 'MongoDB']
+    }
   ];
 
   return (
@@ -44,9 +50,18 @@ const Projects = () => {
             <img src={project.imageUrl} alt={project.title} className="project-image" />
             <h2 className="project-title">{project.title}</h2>
             <p className="project-description">{project.description}</p>
-            <div className="button-group">
-              <a href={project.liveLink} className="project-link-button" target="_blank" rel="noopener noreferrer">View Live</a>
-              <a href={project.repoLink} className="project-link-button" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            
+            {/* Tags for the technology stack */}
+            <div className="project-tags">
+              {project.tags.map((tag, index) => (
+                <span key={index} className="tag">{tag}</span>
+              ))}
+            </div>
+
+            {/* Buttons for live link and GitHub */}
+            <div className="button-container">
+              <a href={project.liveLink} className="project-link">Live Link</a>
+              <a href={project.githubLink} className="project-github">GitHub</a>
             </div>
           </div>
         ))}
