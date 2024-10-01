@@ -17,6 +17,7 @@ body {
   width: 100vw; /* Cover the entire viewport width */
   height: 100vh; /* Cover the entire viewport height */
   overflow: hidden; /* Prevent scrolling */
+  z-index: -1;
 }
 
 .circle-container {

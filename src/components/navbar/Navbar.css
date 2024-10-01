@@ -1,0 +1,43 @@
+/* src/components/Navbar.css */
+.navbar-container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7); /* Background with transparency */
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .app-bar {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 25px;
+  }
+  
+  .app-bar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* App icon styling */
+  .app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .icon-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  
+  .app-icon:hover .icon-image {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #ffa500;
+  }
