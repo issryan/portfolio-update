@@ -1,14 +1,35 @@
 import React from 'react';
-import './Projects.css'; 
+import './Projects.css';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Projects = () => {
   const [projectsRef, isProjectsVisible] = useScrollAnimation();
 
   const projectList = [
-    { id: 1, title: 'Shift Happens', description: 'Description for project 1',link: '/project1', imageUrl: 'https://via.placeholder.com/300' },
-    { id: 2, title: 'Flick', description: 'Description for project 2', link: '/project2',imageUrl: 'https://via.placeholder.com/300' },
-    { id: 3, title: 'Breed Finder', description: 'Description for project 3', link: '/project3',imageUrl: 'https://via.placeholder.com/300' },
+    {
+      id: 1,
+      title: 'Shift Happens',
+      description: 'A shift scheduling app with smart auto-scheduling features.',
+      liveLink: 'https://example.com/shift-happens',
+      repoLink: 'https://github.com/issryan/ShiftHappens',
+      imageUrl: 'https://via.placeholder.com/300'
+    },
+    {
+      id: 2,
+      title: 'Flick',
+      description: 'A social media app built for sharing short videos and images.',
+      liveLink: 'https://projectflick.netlify.app',
+      repoLink: 'https://github.com/project-flick/Flick',
+      imageUrl: 'https://via.placeholder.com/300'
+    },
+    {
+      id: 3,
+      title: 'Breed Finder',
+      description: 'An AI-powered app to identify dog breeds from pictures.',
+      liveLink: 'https://example.com/breed-finder',
+      repoLink: 'https://github.com/issryan/BreedFinder',
+      imageUrl: 'https://via.placeholder.com/300'
+    },
   ];
 
   return (
@@ -23,7 +44,10 @@ const Projects = () => {
             <img src={project.imageUrl} alt={project.title} className="project-image" />
             <h2 className="project-title">{project.title}</h2>
             <p className="project-description">{project.description}</p>
-            <button className="project-link">View Details</button>
+            <div className="button-group">
+              <a href={project.liveLink} className="project-link-button" target="_blank" rel="noopener noreferrer">View Live</a>
+              <a href={project.repoLink} className="project-link-button" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
           </div>
         ))}
       </div>
