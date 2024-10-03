@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
-import Contact from './pages/Contact';
 import Particles from './components/ParticleEffect'
 import './App.css';
 import Navbar from './components/navbar/Navbar';
@@ -19,7 +18,6 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
